@@ -18,22 +18,22 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QHeaderView, QPushButton, QSizePolicy,
     QTableView, QVBoxLayout, QWidget)
 
-class Ui_Form(object):
-    def setupUi(self, Form):
-        if not Form.objectName():
-            Form.setObjectName(u"Form")
-        Form.resize(1080, 730)
-        Form.setStyleSheet(u"background-color: \"black\";\n"
+class Ui_caucionesWidget(object):
+    def setupUi(self, caucionesWidget):
+        if not caucionesWidget.objectName():
+            caucionesWidget.setObjectName(u"caucionesWidget")
+        caucionesWidget.resize(1080, 730)
+        caucionesWidget.setStyleSheet(u"background-color: \"black\";\n"
 "color: \"white\";")
-        self.verticalLayout = QVBoxLayout(Form)
+        self.verticalLayout = QVBoxLayout(caucionesWidget)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.caucionesTable = QTableView(Form)
+        self.caucionesTable = QTableView(caucionesWidget)
         self.caucionesTable.setObjectName(u"caucionesTable")
         self.caucionesTable.setStyleSheet(u"background: \"lightgray\"; color: \"black\"")
 
         self.verticalLayout.addWidget(self.caucionesTable)
 
-        self.nuevaCaucionBtn = QPushButton(Form)
+        self.nuevaCaucionBtn = QPushButton(caucionesWidget)
         self.nuevaCaucionBtn.setObjectName(u"nuevaCaucionBtn")
         self.nuevaCaucionBtn.setMinimumSize(QSize(782, 65))
         self.nuevaCaucionBtn.setStyleSheet(u"background-color: \"green\";\n"
@@ -43,13 +43,13 @@ class Ui_Form(object):
         self.verticalLayout.addWidget(self.nuevaCaucionBtn)
 
 
-        self.retranslateUi(Form)
+        self.retranslateUi(caucionesWidget)
 
-        QMetaObject.connectSlotsByName(Form)
+        QMetaObject.connectSlotsByName(caucionesWidget)
     # setupUi
 
-    def retranslateUi(self, Form):
-        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
-        self.nuevaCaucionBtn.setText(QCoreApplication.translate("Form", u"Nueva cauci\u00f3n", None))
+    def retranslateUi(self, caucionesWidget):
+        caucionesWidget.setWindowTitle(QCoreApplication.translate("caucionesWidget", u"Cauciones", None))
+        self.nuevaCaucionBtn.setText(QCoreApplication.translate("caucionesWidget", u"Nueva cauci\u00f3n", None))
     # retranslateUi
 

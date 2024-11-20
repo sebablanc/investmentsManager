@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import QFile, QIODevice
 from PySide6.QtUiTools import QUiLoader
 from cauciones.models.CaucionTableModel import CaucionTableModel
+from cauciones.nuevaCaucionDlg import NuevaCaucionDlg
 
 UI_FILE_NAME = "cauciones/caucionMain.ui"
 
@@ -25,6 +26,17 @@ class CaucionMain(QWidget):
         self.model = CaucionTableModel(data)
 
         self.ui.caucionesTable.setModel(self.model)
+
+        self.ui.nuevaCaucionBtn.clicked.connect(
+                    lambda checked: self.openNuevaCaucionDlg()
+                )
+
+    def openNuevaCaucionDlg(self):
+        windowUi = NuevaCaucionDlg(self)
+        if windowUi.ui.isVisible():
+            windowUi.ui.hide()
+        else:
+            windowUi.ui.show()
 
     def loadCaucionMain(self):
         ui_file = QFile(UI_FILE_NAME)
