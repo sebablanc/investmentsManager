@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>884</width>
-    <height>482</height>
+    <width>897</width>
+    <height>455</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,13 +16,13 @@
   <property name="styleSheet">
    <string notr="true">background: &quot;black&quot;; color: &quot;white&quot;</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_5">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_5">
+    <layout class="QHBoxLayout" name="horizontalLayout_12">
      <item>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
          <item>
           <widget class="QLabel" name="label">
            <property name="minimumSize">
@@ -59,7 +59,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
           <widget class="QLabel" name="label_2">
            <property name="minimumSize">
@@ -89,7 +89,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
          <item>
           <widget class="QLabel" name="label_3">
            <property name="minimumSize">
@@ -116,7 +116,7 @@
         </layout>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
          <item>
           <widget class="QLabel" name="label_4">
            <property name="minimumSize">
@@ -169,7 +169,7 @@ border-radius: 10</string>
        <property name="frameShadow">
         <enum>QFrame::Shadow::Raised</enum>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QVBoxLayout" name="verticalLayout_5">
         <item>
          <widget class="QLabel" name="label_5">
           <property name="minimumSize">
@@ -221,11 +221,43 @@ border-radius: 10</string>
     </layout>
    </item>
    <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QLabel" name="label_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="font">
+          <font>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5</string>
+         </property>
          <property name="text">
           <string>Importe Bruto</string>
          </property>
@@ -239,6 +271,12 @@ border-radius: 10</string>
            <height>41</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <fontweight>DemiBold</fontweight>
+          </font>
+         </property>
          <property name="text">
           <string>$100.000.000.000.000.000,00</string>
          </property>
@@ -247,9 +285,19 @@ border-radius: 10</string>
       </layout>
      </item>
      <item row="0" column="1">
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
         <widget class="QLabel" name="label_11">
+         <property name="font">
+          <font>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5</string>
+         </property>
          <property name="text">
           <string>Derecho de mercado</string>
          </property>
@@ -263,6 +311,15 @@ border-radius: 10</string>
            <height>41</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <underline>false</underline>
+           <strikeout>false</strikeout>
+           <kerning>true</kerning>
+           <fontweight>DemiBold</fontweight>
+          </font>
+         </property>
          <property name="text">
           <string>$100.000.000.000.000.000,00</string>
          </property>
@@ -271,9 +328,19 @@ border-radius: 10</string>
       </layout>
      </item>
      <item row="1" column="0">
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QLabel" name="label_10">
+         <property name="font">
+          <font>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5</string>
+         </property>
          <property name="text">
           <string>Comisión</string>
          </property>
@@ -287,6 +354,12 @@ border-radius: 10</string>
            <height>41</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <fontweight>DemiBold</fontweight>
+          </font>
+         </property>
          <property name="text">
           <string>$100.000.000.000.000.000,00</string>
          </property>
@@ -295,9 +368,19 @@ border-radius: 10</string>
       </layout>
      </item>
      <item row="1" column="1">
-      <layout class="QHBoxLayout" name="horizontalLayout_12">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
         <widget class="QLabel" name="label_12">
+         <property name="font">
+          <font>
+           <italic>true</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5</string>
+         </property>
          <property name="text">
           <string>IVA 21%</string>
          </property>
@@ -311,6 +394,12 @@ border-radius: 10</string>
            <height>41</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <fontweight>DemiBold</fontweight>
+          </font>
+         </property>
          <property name="text">
           <string>$100.000.000.000.000.000,00</string>
          </property>
@@ -321,7 +410,23 @@ border-radius: 10</string>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_13">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_14">
      <item>
       <widget class="QFrame" name="frame_2">
        <property name="minimumSize">
@@ -347,7 +452,7 @@ border-radius: 10</string>
        <property name="frameShadow">
         <enum>QFrame::Shadow::Raised</enum>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QLabel" name="label_13">
           <property name="minimumSize">
@@ -427,7 +532,7 @@ border-radius: 10</string>
        <property name="frameShadow">
         <enum>QFrame::Shadow::Raised</enum>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_4">
+       <layout class="QVBoxLayout" name="verticalLayout_3">
         <item>
          <widget class="QLabel" name="label_14">
           <property name="minimumSize">
@@ -479,53 +584,55 @@ border-radius: 10</string>
     </layout>
    </item>
    <item>
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="styleSheet">
-      <string notr="true"/>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="minimumSize">
+      <size>
+       <width>851</width>
+       <height>40</height>
+      </size>
      </property>
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>40</height>
+      </size>
      </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
-     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_13">
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>696</width>
+          <height>17</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveBtn">
+        <property name="styleSheet">
+         <string notr="true">background: &quot;green&quot;; color: &quot;white&quot;</string>
+        </property>
+        <property name="text">
+         <string>Guardar</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="cancelBtn">
+        <property name="text">
+         <string>Cancelar</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>nuevaCaucionDlg</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>nuevaCaucionDlg</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
