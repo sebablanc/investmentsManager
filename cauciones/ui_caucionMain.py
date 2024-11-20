@@ -15,32 +15,41 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QLabel, QMainWindow,
-    QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QApplication, QHeaderView, QPushButton, QSizePolicy,
+    QTableView, QVBoxLayout, QWidget)
 
-class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
-        if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(800, 600)
-        self.centralwidget = QWidget(MainWindow)
-        self.centralwidget.setObjectName(u"centralwidget")
-        self.gridLayout = QGridLayout(self.centralwidget)
-        self.gridLayout.setObjectName(u"gridLayout")
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
+class Ui_Form(object):
+    def setupUi(self, Form):
+        if not Form.objectName():
+            Form.setObjectName(u"Form")
+        Form.resize(1080, 730)
+        Form.setStyleSheet(u"background-color: \"black\";\n"
+"color: \"white\";")
+        self.verticalLayout = QVBoxLayout(Form)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.caucionesTable = QTableView(Form)
+        self.caucionesTable.setObjectName(u"caucionesTable")
+        self.caucionesTable.setStyleSheet(u"background: \"lightgray\"; color: \"black\"")
 
-        self.gridLayout.addWidget(self.label, 0, 0, 1, 1)
+        self.verticalLayout.addWidget(self.caucionesTable)
 
-        MainWindow.setCentralWidget(self.centralwidget)
+        self.nuevaCaucionBtn = QPushButton(Form)
+        self.nuevaCaucionBtn.setObjectName(u"nuevaCaucionBtn")
+        self.nuevaCaucionBtn.setMinimumSize(QSize(782, 65))
+        self.nuevaCaucionBtn.setStyleSheet(u"background-color: \"green\";\n"
+"color: \"white\";\n"
+"margin: 10;")
 
-        self.retranslateUi(MainWindow)
+        self.verticalLayout.addWidget(self.nuevaCaucionBtn)
 
-        QMetaObject.connectSlotsByName(MainWindow)
+
+        self.retranslateUi(Form)
+
+        QMetaObject.connectSlotsByName(Form)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"HOla", None))
+    def retranslateUi(self, Form):
+        Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
+        self.nuevaCaucionBtn.setText(QCoreApplication.translate("Form", u"Nueva cauci\u00f3n", None))
     # retranslateUi
 
