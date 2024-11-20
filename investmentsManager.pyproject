@@ -1,0 +1,8 @@
+{
+    "files": [
+        "cauciones/caucionMain.py",
+        "cauciones/caucionMain.ui",
+        "main.py",
+        "mainwindow.ui"
+    ]
+}
