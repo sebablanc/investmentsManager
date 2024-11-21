@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>897</width>
-    <height>455</height>
+    <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,209 +16,287 @@
   <property name="styleSheet">
    <string notr="true">background: &quot;black&quot;; color: &quot;white&quot;</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_2">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_12">
-     <item>
-      <layout class="QVBoxLayout" name="verticalLayout">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QLabel" name="label">
-           <property name="minimumSize">
-            <size>
-             <width>101</width>
-             <height>16</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Fecha</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDateEdit" name="currentDateInput">
-           <property name="minimumSize">
-            <size>
-             <width>191</width>
-             <height>22</height>
-            </size>
-           </property>
-           <property name="calendarPopup">
-            <bool>true</bool>
-           </property>
-           <property name="date">
-            <date>
-             <year>2024</year>
-             <month>11</month>
-             <day>20</day>
-            </date>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QLabel" name="label">
+         <property name="minimumSize">
+          <size>
+           <width>101</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Fecha</string>
+         </property>
+        </widget>
        </item>
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="label_2">
-           <property name="minimumSize">
-            <size>
-             <width>101</width>
-             <height>16</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>TNA %</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="tnaInput">
-           <property name="minimumSize">
-            <size>
-             <width>191</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="maximum">
-            <double>100.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <item>
-          <widget class="QLabel" name="label_3">
-           <property name="minimumSize">
-            <size>
-             <width>101</width>
-             <height>16</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Cantidad de días</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="daysInput">
-           <property name="minimumSize">
-            <size>
-             <width>191</width>
-             <height>0</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_11">
-         <item>
-          <widget class="QLabel" name="label_4">
-           <property name="minimumSize">
-            <size>
-             <width>101</width>
-             <height>16</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>Monto</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="montoInput">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>191</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="minimum">
-            <double>0.000000000000000</double>
-           </property>
-           <property name="maximum">
-            <double>100000000000000000.000000000000000</double>
-           </property>
-           <property name="value">
-            <double>0.000000000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
+        <widget class="QDateEdit" name="currentDateInput">
+         <property name="minimumSize">
+          <size>
+           <width>191</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="calendarPopup">
+          <bool>true</bool>
+         </property>
+         <property name="date">
+          <date>
+           <year>2024</year>
+           <month>11</month>
+           <day>20</day>
+          </date>
+         </property>
+        </widget>
        </item>
       </layout>
      </item>
-     <item>
-      <widget class="QFrame" name="frame">
-       <property name="styleSheet">
-        <string notr="true">background-color: &quot;green&quot;;
-color: &quot;white&quot;;
-border-radius: 10</string>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Shape::StyledPanel</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Shadow::Raised</enum>
-       </property>
-       <layout class="QVBoxLayout" name="verticalLayout_5">
-        <item>
-         <widget class="QLabel" name="label_5">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>41</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>41</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <pointsize>16</pointsize>
-            <bold>true</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>MONTO TOTAL</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="montoTotalLbl">
-          <property name="font">
-           <font>
-            <family>Rockwell</family>
-            <pointsize>20</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="text">
-           <string>$100.000.000.000.000.000,00</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignmentFlag::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="minimumSize">
+          <size>
+           <width>101</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Monto</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="montoInput">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>191</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="minimum">
+          <double>0.000000000000000</double>
+         </property>
+         <property name="maximum">
+          <double>100000000000000000.000000000000000</double>
+         </property>
+         <property name="value">
+          <double>0.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_6">
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="minimumSize">
+          <size>
+           <width>101</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>TNA %</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="tnaInput">
+         <property name="minimumSize">
+          <size>
+           <width>191</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="minimumSize">
+          <size>
+           <width>101</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Comision %</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="comisionInput">
+         <property name="minimumSize">
+          <size>
+           <width>191</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="minimumSize">
+          <size>
+           <width>101</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Cantidad de días</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="daysInput">
+         <property name="minimumSize">
+          <size>
+           <width>191</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximum">
+          <number>365</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="2" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="minimumSize">
+          <size>
+           <width>101</width>
+           <height>16</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Derecho de mercado %</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QDoubleSpinBox" name="derechoMercadoInput">
+         <property name="minimumSize">
+          <size>
+           <width>191</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="decimals">
+          <number>3</number>
+         </property>
+         <property name="maximum">
+          <double>100.000000000000000</double>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
     </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Orientation::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Policy::MinimumExpanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="styleSheet">
+      <string notr="true">background-color: &quot;green&quot;;
+color: &quot;white&quot;;
+border-radius: 10</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>41</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>MONTO TOTAL</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="montoTotalLbl">
+        <property name="font">
+         <font>
+          <family>Rockwell</family>
+          <pointsize>20</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>$0,00</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item>
     <spacer name="verticalSpacer_2">
@@ -238,8 +316,14 @@ border-radius: 10</string>
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout">
+     <property name="spacing">
+      <number>3</number>
+     </property>
      <item row="0" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>1</number>
+       </property>
        <item>
         <widget class="QLabel" name="label_6">
          <property name="sizePolicy">
@@ -256,7 +340,9 @@ border-radius: 10</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background: rgb(204,107,0);
-padding-left:5</string>
+padding-left:5;
+border-top-left-radius:10;
+border-bottom-left-radius:10</string>
          </property>
          <property name="text">
           <string>Importe Bruto</string>
@@ -277,8 +363,14 @@ padding-left:5</string>
            <fontweight>DemiBold</fontweight>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5;
+border-top-right-radius:10;
+border-bottom-right-radius:10</string>
+         </property>
          <property name="text">
-          <string>$100.000.000.000.000.000,00</string>
+          <string>$0,00</string>
          </property>
         </widget>
        </item>
@@ -286,6 +378,9 @@ padding-left:5</string>
      </item>
      <item row="0" column="1">
       <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <property name="spacing">
+        <number>1</number>
+       </property>
        <item>
         <widget class="QLabel" name="label_11">
          <property name="font">
@@ -296,7 +391,9 @@ padding-left:5</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background: rgb(204,107,0);
-padding-left:5</string>
+padding-left:5;
+border-top-left-radius:10;
+border-bottom-left-radius:10</string>
          </property>
          <property name="text">
           <string>Derecho de mercado</string>
@@ -320,8 +417,14 @@ padding-left:5</string>
            <fontweight>DemiBold</fontweight>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5;
+border-top-right-radius:10;
+border-bottom-right-radius:10</string>
+         </property>
          <property name="text">
-          <string>$100.000.000.000.000.000,00</string>
+          <string>$0,00</string>
          </property>
         </widget>
        </item>
@@ -329,6 +432,9 @@ padding-left:5</string>
      </item>
      <item row="1" column="0">
       <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <property name="spacing">
+        <number>1</number>
+       </property>
        <item>
         <widget class="QLabel" name="label_10">
          <property name="font">
@@ -339,7 +445,9 @@ padding-left:5</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background: rgb(204,107,0);
-padding-left:5</string>
+padding-left:5;
+border-top-left-radius:10;
+border-bottom-left-radius:10</string>
          </property>
          <property name="text">
           <string>Comisión</string>
@@ -360,8 +468,14 @@ padding-left:5</string>
            <fontweight>DemiBold</fontweight>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5;
+border-top-right-radius:10;
+border-bottom-right-radius:10</string>
+         </property>
          <property name="text">
-          <string>$100.000.000.000.000.000,00</string>
+          <string>$0,00</string>
          </property>
         </widget>
        </item>
@@ -369,6 +483,9 @@ padding-left:5</string>
      </item>
      <item row="1" column="1">
       <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="spacing">
+        <number>1</number>
+       </property>
        <item>
         <widget class="QLabel" name="label_12">
          <property name="font">
@@ -379,7 +496,9 @@ padding-left:5</string>
          </property>
          <property name="styleSheet">
           <string notr="true">background: rgb(204,107,0);
-padding-left:5</string>
+padding-left:5;
+border-bottom-left-radius:10;
+border-top-left-radius:10</string>
          </property>
          <property name="text">
           <string>IVA 21%</string>
@@ -400,8 +519,14 @@ padding-left:5</string>
            <fontweight>DemiBold</fontweight>
           </font>
          </property>
+         <property name="styleSheet">
+          <string notr="true">background: rgb(204,107,0);
+padding-left:5;
+border-bottom-right-radius:10;
+border-top-right-radius:10</string>
+         </property>
          <property name="text">
-          <string>$100.000.000.000.000.000,00</string>
+          <string>$0,00</string>
          </property>
         </widget>
        </item>
@@ -482,7 +607,7 @@ border-radius: 10</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="montoTotalLbl_2">
+         <widget class="QLabel" name="gananciaNetaLbl">
           <property name="font">
            <font>
             <family>Rockwell</family>
@@ -491,7 +616,7 @@ border-radius: 10</string>
            </font>
           </property>
           <property name="text">
-           <string>$100.000.000.000.000.000,00</string>
+           <string>$0,00</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -562,7 +687,7 @@ border-radius: 10</string>
          </widget>
         </item>
         <item>
-         <widget class="QLabel" name="montoTotalLbl_3">
+         <widget class="QLabel" name="fechaLiquidacionLbl">
           <property name="font">
            <font>
             <family>Rockwell</family>

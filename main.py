@@ -1,10 +1,9 @@
 # This Python file uses the following encoding: utf-8
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import QFile, QIODevice
-from PySide6.QtUiTools import QUiLoader
 from cauciones.caucionMain import CaucionMain
 from fci.fciMain import FciMain
+from utils.navigationUtils import NavigationUtils
 
 UI_FILE_NAME = "mainwindow.ui"
 
@@ -27,13 +26,8 @@ class MainWindow(QMainWindow):
                 )
 
     def loadMainWindow(self):
-        ui_file = QFile(UI_FILE_NAME)
-        if not ui_file.open(QIODevice.ReadOnly):
-            print(f"Cannot open {UI_FILE_NAME}: {ui_file.errorString()}")
-            sys.exit(-1)
-
-        loader = QUiLoader()
-        return loader.load(ui_file)
+        navigator = NavigationUtils(UI_FILE_NAME)
+        return navigator.loadNewWindow()
 
     def switchWindow(self, index):
         if index == 1:

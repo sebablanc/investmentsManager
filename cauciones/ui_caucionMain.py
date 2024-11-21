@@ -36,6 +36,7 @@ class Ui_caucionesWidget(object):
         self.nuevaCaucionBtn = QPushButton(caucionesWidget)
         self.nuevaCaucionBtn.setObjectName(u"nuevaCaucionBtn")
         self.nuevaCaucionBtn.setMinimumSize(QSize(782, 65))
+        self.nuevaCaucionBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.nuevaCaucionBtn.setStyleSheet(u"background-color: \"green\";\n"
 "color: \"white\";\n"
 "margin: 10;")
