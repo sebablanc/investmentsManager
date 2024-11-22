@@ -157,8 +157,8 @@ class Ui_nuevaCaucionDlg(object):
 "border-radius: 10")
         self.frame.setFrameShape(QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_5 = QVBoxLayout(self.frame)
-        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.horizontalLayout_9 = QHBoxLayout(self.frame)
+        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
         self.label_5 = QLabel(self.frame)
         self.label_5.setObjectName(u"label_5")
         self.label_5.setMinimumSize(QSize(0, 41))
@@ -169,7 +169,7 @@ class Ui_nuevaCaucionDlg(object):
         self.label_5.setFont(font)
         self.label_5.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_5.addWidget(self.label_5)
+        self.horizontalLayout_9.addWidget(self.label_5)
 
         self.montoTotalLbl = QLabel(self.frame)
         self.montoTotalLbl.setObjectName(u"montoTotalLbl")
@@ -180,7 +180,7 @@ class Ui_nuevaCaucionDlg(object):
         self.montoTotalLbl.setFont(font1)
         self.montoTotalLbl.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.verticalLayout_5.addWidget(self.montoTotalLbl)
+        self.horizontalLayout_9.addWidget(self.montoTotalLbl)
 
 
         self.verticalLayout.addWidget(self.frame)
@@ -409,12 +409,14 @@ class Ui_nuevaCaucionDlg(object):
 
         self.saveBtn = QPushButton(self.widget)
         self.saveBtn.setObjectName(u"saveBtn")
+        self.saveBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
         self.saveBtn.setStyleSheet(u"background: \"green\"; color: \"white\"")
 
         self.horizontalLayout_13.addWidget(self.saveBtn)
 
         self.cancelBtn = QPushButton(self.widget)
         self.cancelBtn.setObjectName(u"cancelBtn")
+        self.cancelBtn.setCursor(QCursor(Qt.CursorShape.PointingHandCursor))
 
         self.horizontalLayout_13.addWidget(self.cancelBtn)
 
