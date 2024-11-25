@@ -1,24 +1,17 @@
 # This Python file uses the following encoding: utf-8
 import sys
 from PySide6.QtWidgets import QApplication
-from PySide6.QtSql import QSqlDatabase
+from mysql import connector
 
 class SQLConnection:
     def __init__(self):
-        self.dbConnection = QSqlDatabase.database()
+        self.dbConnection = connector.connect(
+                host="127.0.0.1",
+                database="investments",
+                user="seba",
+                password="Seba_1234")
 
-        if not(self.dbConnection.isValid()):
-            self.dbConnection = QSqlDatabase.addDatabase("QPSQL")
-            self.dbConnection.setHostName("localhost")
-            self.dbConnection.setDatabaseName("investments")
-            self.dbConnection.setUserName("postgres")
-            self.dbConnection.setPassword("1234")
-            ok = self.dbConnection.open()
-            if not self.dbConnection.isValid():
-                print("Cannot add database")
-            else:
-                self.dbConnection = QSqlDatabase.database()
-                print(f'resultado: {ok}')
+        print(self.dbConnection.cursor())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
