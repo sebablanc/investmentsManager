@@ -11,7 +11,7 @@ UI_FILE_NAME = "cauciones/nuevaCaucionDialog.ui"
 class NuevaCaucionDlg(QDialog):
     def __init__(self, parent=None):
         super(NuevaCaucionDlg, self).__init__(parent)
-        self.caucion = CaucionModel()
+        self.caucion = CaucionModel(None)
 
         self.ui = self.loadNuevaCaucionDlg()
         self.caucionesSrv = CaucionesService()
@@ -24,11 +24,15 @@ class NuevaCaucionDlg(QDialog):
         self.ui.comisionInput.valueChanged.connect(self.comisionChangedHandler)
         self.ui.derechoMercadoInput.valueChanged.connect(self.derechoMercadoChangedHandler)
         self.ui.cancelBtn.clicked.connect(parent.openWindow)
-        self.ui.saveBtn.clicked.connect(self.prueba)
+        self.ui.saveBtn.clicked.connect(self.guardarCuacion)
 
         # Setea el día actual al comienzo de la ventana
         self.ui.currentDateInput.setDate(QDate.currentDate())
         self.daysChangedHandler(0)
+
+    def setCaucion(self, data):
+        self.caucion = CaucionModel(data)
+        self.recalcularTodoLosImportes()
 
     def prueba(self):
         self.ui.saveBtn.setEnabled(False)
@@ -37,12 +41,29 @@ class NuevaCaucionDlg(QDialog):
         self.timer.timeout.connect(self.enableBtn)
         self.timer.start()
 
+    def guardarCuacion(self):
+        self.ui.saveBtn.setEnabled(False)
+        try:
+            self.caucionesSrv.save(
+                self.caucion.fechaInicio.toString("yyyy-MM-dd"),
+                self.caucion.montoInversion,
+                self.caucion.tna,
+                self.caucion.porcentajeComision,
+                self.caucion.days,
+                self.caucion.porcentajeDerechoMercado)
+        except Exception as e:
+            print(e)
+        else:
+            self.enableBtn()
+
+
     def enableBtn(self):
         self.ui.saveBtn.setEnabled(True)
 
     # Setea el valor de la fecha de liquidación cuando se cambia la fecha,
     # teniendo en cuenta los días seleccionados
     def dateChangedHandler(self, value):
+        self.caucion.fechaInicio = value
         self.ui.fechaLiquidacionLbl.setText(value.addDays(self.caucion.days).toString("dd/MM/yyyy"))
         self.recalcularTodoLosImportes()
 

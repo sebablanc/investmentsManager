@@ -7,16 +7,19 @@ class CaucionTableModel(QAbstractTableModel):
         super(CaucionTableModel, self).__init__()
         self._data = data
 
-        self.hheaders = ["Fecha Inversión", "Monto Invertido", "Cantidad de días", "TNA %", "Importe bruto", "comisión", "derecho de mercado", "IVA 21%", "Importe real neto", "Ganancia neta", "Fecha de liquidación"]
+        self.hheaders = ["Fecha Inversión", "Monto Invertido", "Cantidad de días", "TNA %", "Derecho de mercado", "ID"]
 
     def data(self, index, role):
         value = self._data[index.row()][index.column()]
         if role == Qt.ItemDataRole.DisplayRole:
            if isinstance(value, datetime):
                value = value.strftime("%d/%m/%Y")
-           elif isinstance(value, float):
+           elif(isinstance(value, float) and index.column() == 1):
                value = "%.2f" % value
                value = "$" + value.replace(".", ",")
+           elif(isinstance(value, float) and (index.column() == 3 or index.column() == 4)):
+               value = "%.2f" % value
+               value = value.replace(".", ",") + "%"
            elif isinstance(value, str):
                value = '"%s"' % value
 
@@ -37,4 +40,4 @@ class CaucionTableModel(QAbstractTableModel):
             return len(self._data)
 
     def columnCount(self, index):
-        return len(self._data[0])
+        return len(self._data[0]) - 1

@@ -1,6 +1,7 @@
 # This Python file uses the following encoding: utf-8
 import sys
 from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import QCoreApplication, Qt
 from cauciones.caucionMain import CaucionMain
 from fci.fciMain import FciMain
 from utils.navigationUtils import NavigationUtils
@@ -44,6 +45,7 @@ class MainWindow(QMainWindow):
             windowUi.showMaximized()
 
 if __name__ == "__main__":
+    QCoreApplication.setAttribute(Qt.AA_ShareOpenGLContexts)
     app = QApplication(sys.argv)
     window = MainWindow()
     window.ui.show()
