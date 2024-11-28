@@ -7,7 +7,7 @@ class CaucionTableModel(QAbstractTableModel):
         super(CaucionTableModel, self).__init__()
         self._data = data
 
-        self.hheaders = ["Fecha Inversión", "Monto Invertido", "Cantidad de días", "TNA %", "Derecho de mercado", "ID"]
+        self.hheaders = ["Fecha Inversión", "Monto Invertido", "Cantidad de días", "TNA %", "Comision", "Derecho de mercado", "ID"]
 
     def data(self, index, role):
         value = self._data[index.row()][index.column()]

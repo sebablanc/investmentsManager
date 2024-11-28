@@ -3,7 +3,6 @@
 
 class CaucionModel:
     def __init__(self, data):
-        print(data)
         self.id = data['caucion_id'] if data and data['caucion_id'] else None
         self.fechaInicio = data['fecha'] if data and data['fecha'] else None
         self.montoInversion = data['monto'] if data and data['monto'] else 0
@@ -14,6 +13,6 @@ class CaucionModel:
         self.days = data['dias'] if data and data['dias'] else 0
         self.tna = data['tna'] if data and data['tna'] else 0
         self.iva = 0
-        self.porcentajeComision = 0
+        self.porcentajeComision = data['comision'] if data and data['comision'] else 0
         self.porcentajeDerechoMercado = data['derechoMercado'] if data and data['derechoMercado'] else 0
         self.importeNetoReal = 0

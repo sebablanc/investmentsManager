@@ -9,12 +9,13 @@ from services.cauciones.caucionesService import CaucionesService
 UI_FILE_NAME = "cauciones/nuevaCaucionDialog.ui"
 
 class NuevaCaucionDlg(QDialog):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, onClose=None):
         super(NuevaCaucionDlg, self).__init__(parent)
-        self.caucion = CaucionModel(None)
 
         self.ui = self.loadNuevaCaucionDlg()
         self.caucionesSrv = CaucionesService()
+        self.onClose = onClose
+        self.caucion = CaucionModel(None)
 
         # Conecta los eventos de la vista
         self.ui.currentDateInput.dateChanged.connect(self.dateChangedHandler)
@@ -24,7 +25,7 @@ class NuevaCaucionDlg(QDialog):
         self.ui.comisionInput.valueChanged.connect(self.comisionChangedHandler)
         self.ui.derechoMercadoInput.valueChanged.connect(self.derechoMercadoChangedHandler)
         self.ui.cancelBtn.clicked.connect(parent.openWindow)
-        self.ui.saveBtn.clicked.connect(self.guardarCuacion)
+        self.ui.saveBtn.clicked.connect(lambda a: self.guardarCaucion() if self.caucion.id is None else self.actualizarCaucion())
 
         # Setea el día actual al comienzo de la ventana
         self.ui.currentDateInput.setDate(QDate.currentDate())
@@ -32,17 +33,16 @@ class NuevaCaucionDlg(QDialog):
 
     def setCaucion(self, data):
         self.caucion = CaucionModel(data)
+        self.ui.currentDateInput.setDate(self.caucion.fechaInicio)
+        self.ui.montoInput.setValue(self.caucion.montoInversion)
+        self.ui.tnaInput.setValue(self.caucion.tna)
+        self.ui.daysInput.setValue(self.caucion.days)
+        self.ui.comisionInput.setValue(self.caucion.porcentajeComision)
+        self.ui.derechoMercadoInput.setValue(self.caucion.porcentajeDerechoMercado)
         self.recalcularTodoLosImportes()
 
-    def prueba(self):
-        self.ui.saveBtn.setEnabled(False)
-        self.timer = QTimer()
-        self.timer.setInterval(1000)
-        self.timer.timeout.connect(self.enableBtn)
-        self.timer.start()
-
-    def guardarCuacion(self):
-        self.ui.saveBtn.setEnabled(False)
+    def guardarCaucion(self):
+        self.enableBtn(False)
         try:
             self.caucionesSrv.save(
                 self.caucion.fechaInicio.toString("yyyy-MM-dd"),
@@ -54,11 +54,31 @@ class NuevaCaucionDlg(QDialog):
         except Exception as e:
             print(e)
         else:
-            self.enableBtn()
+            self.enableBtn(True)
+            self.ui.hide()
+            self.parent.getData()
 
+    def actualizarCaucion(self):
+        self.enableBtn(False)
+        try:
+            print('entra al actualizar')
+            self.caucionesSrv.update(
+                self.caucion.id,
+                self.caucion.fechaInicio.toString("yyyy-MM-dd"),
+                self.caucion.montoInversion,
+                self.caucion.tna,
+                self.caucion.porcentajeComision,
+                self.caucion.days,
+                self.caucion.porcentajeDerechoMercado)
+        except Exception as e:
+            print(e)
+        finally:
+            self.enableBtn(True)
+            if(self.onClose is not None):
+                self.onClose()
 
-    def enableBtn(self):
-        self.ui.saveBtn.setEnabled(True)
+    def enableBtn(self, enable = True):
+        self.ui.saveBtn.setEnabled(enable)
 
     # Setea el valor de la fecha de liquidación cuando se cambia la fecha,
     # teniendo en cuenta los días seleccionados

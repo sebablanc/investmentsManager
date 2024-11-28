@@ -10,9 +10,9 @@ UI_FILE_NAME = "cauciones/caucionMain.ui"
 class CaucionMain(QWidget):
     def __init__(self):
         super().__init__()
-
         self.ui = self.loadCaucionMain()
         self.caucionesSrv = CaucionesService()
+        self.windowUi = NuevaCaucionDlg(self, self.openWindow)
         self.data = []
         self.getData()
 
@@ -36,7 +36,6 @@ class CaucionMain(QWidget):
             self.ui.caucionesTable.doubleClicked.connect(self.itemDoubleClicked)
 
     def itemDoubleClicked(self, value):
-        print('itemDoubleClicked')
         if(self.data):
             dataToSend = self.data[value.row()]
             data_caucion = {
@@ -46,18 +45,18 @@ class CaucionMain(QWidget):
               'comision': dataToSend[4],
               'dias': dataToSend[2],
               'derechoMercado': dataToSend[5],
-              'caucion_id': dataToSend[5]
+              'caucion_id': dataToSend[6]
             }
             self.openNuevaCaucionDlg(data_caucion)
 
     def openNuevaCaucionDlg(self, data=None):
-        self.windowUi = NuevaCaucionDlg(self)
         self.windowUi.setCaucion(data)
         self.openWindow()
 
     def openWindow(self):
         if self.windowUi.ui.isVisible():
             self.windowUi.ui.hide()
+            self.getData()
         else:
             self.windowUi.ui.show()
 
