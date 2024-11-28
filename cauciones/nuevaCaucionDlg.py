@@ -1,6 +1,6 @@
 # This Python file uses the following encoding: utf-8
 from PySide6.QtWidgets import QDialog
-from PySide6.QtCore import QDate, QTimer
+from PySide6.QtCore import QDate
 from cauciones.models.caucionModel import CaucionModel
 from utils.navigationUtils import NavigationUtils
 from utils.calculatorUtils import CalculatorUtils
@@ -61,7 +61,6 @@ class NuevaCaucionDlg(QDialog):
     def actualizarCaucion(self):
         self.enableBtn(False)
         try:
-            print('entra al actualizar')
             self.caucionesSrv.update(
                 self.caucion.id,
                 self.caucion.fechaInicio.toString("yyyy-MM-dd"),

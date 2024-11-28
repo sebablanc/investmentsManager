@@ -1,5 +1,4 @@
 # This Python file uses the following encoding: utf-8
-from datetime import datetime
 from services.db.sqlconnection import SQLConnection
 from PySide6.QtCore import QDate
 
@@ -34,7 +33,6 @@ class CaucionesService:
         Actualiza caución
     '''
     def update(self, caucionId, fecha, monto, tna, comision, dias, derechoMercado):
-        print('llama al update')
         self.db = SQLConnection()
         data_caucion = {
           'fecha': fecha,
@@ -45,7 +43,6 @@ class CaucionesService:
           'derecho_mercado': derechoMercado,
           'caucion_id': caucionId
         }
-        print(data_caucion)
         self.db.save(UPDATE_CAUCION, data_caucion)
 
     '''
